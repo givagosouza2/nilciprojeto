@@ -110,14 +110,14 @@ if uploaded_file:
     fig3, (ax3a, ax3b) = plt.subplots(1, 2, figsize=(14, 6))
 
     # Subplot 1: trajetória acumulada com vetores desenhados
-    ax3a.plot(x[:frame], y[:frame], '-', color='gray')
+    ax3a.plot(x[:frame], y[:frame], '-', color='black')
     # 🔧 Ajuste no tamanho das setas para visualização adequada
     for i in range(frame):
         ax3a.arrow(x[i], y[i], dx[i], dy[i], head_width=2,
-                   head_length=2, fc='gray', ec='gray')
+                   head_length=2, fc='gray', ec='black')
 
     ax3a.arrow(x[frame], y[frame], dx[frame], dy[frame], head_width=2,
-               head_length=2, fc='blue', ec='blue')
+               head_length=2, fc='blue', ec='black')
     ax3a.set_title("Trajetória acumulada com vetores")
     ax3a.set_xlabel("X")
     ax3a.set_ylabel("Y")
@@ -159,6 +159,7 @@ if uploaded_file:
     st.pyplot(fig3)
 else:
     st.info("Aguardando upload de arquivo com colunas: tempo, X, Y...")
+
 
 
 
