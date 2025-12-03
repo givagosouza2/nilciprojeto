@@ -148,14 +148,15 @@ if uploaded_file:
     ax3b.axvline(0, color='gray', lw=1)
     ax3b.set_xlabel("\u0394X")
     ax3b.set_ylabel("\u0394Y")
-    ax3b.set_xlim(-100, 100)
-    ax3b.set_ylim(-100, 100)
+    ax3b.set_xlim(-300, 300)
+    ax3b.set_ylim(-300, 300)
     # ax3b.set_aspect('equal')
     ax3b.legend()
 
     st.pyplot(fig3)
 else:
     st.info("Aguardando upload de arquivo com colunas: tempo, X, Y...")
+
 
 
 
