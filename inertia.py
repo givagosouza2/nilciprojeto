@@ -89,8 +89,11 @@ if uploaded_file:
                           edgecolor='red', fc='None', lw=2, label='Elipse de inércia')
         ax2.add_patch(ellipse)
 
-        ax2.axhline(0, color='gray', lw=1)
-        ax2.axvline(0, color='gray', lw=1)
+        #ax2.axhline(0, color='gray', lw=1)
+        #ax2.axvline(0, color='gray', lw=1)
+        ax2.axhline(0, color='black', lw=1)
+        ax2.axvline(0, color='black', lw=1)
+        
         ax2.set_aspect('equal')
         ax2.legend()
         ax2.set_title("Distribuição Vetorial com Setas e Elipse de Inércia")
@@ -128,9 +131,9 @@ if uploaded_file:
     #             alpha=0.6, label="Vetores \u0394X, \u0394Y")
     # 🔧 Plotando setas no subplot de vetores acumulados
     ax3b.quiver(np.zeros_like(dx[:frame+1]), np.zeros_like(dy[:frame+1]), dx[:frame+1],
-                dy[:frame+1], angles='xy', scale_units='xy', scale=1, color='gray', alpha=0.5)
+                dy[:frame+1], angles='xy', scale_units='xy', scale=1, color='black', alpha=0.5)
     ax3b.quiver(np.zeros_like(dx[frame:frame+1]), np.zeros_like(dy[frame:frame+1]), dx[frame:frame+1],
-                dy[frame:frame+1], angles='xy', scale_units='xy', scale=1, color='blue', alpha=0.5)
+                dy[frame:frame+1], angles='xy', scale_units='xy', scale=1, color='black', alpha=0.5)
 
     if frame > 2:
         eixo_maior_f, eixo_menor_f, razao_f, angulo_f, s_index_f, eigvecs_f, eigvals_f = calcular_elipse_inercia(
@@ -144,8 +147,8 @@ if uploaded_file:
     else:
         ax3b.set_title("Vetores acumulados")
 
-    ax3b.axhline(0, color='gray', lw=1)
-    ax3b.axvline(0, color='gray', lw=1)
+    ax3b.axhline(0, color='black', lw=1)
+    ax3b.axvline(0, color='black', lw=1)
     ax3b.set_xlabel("\u0394X")
     ax3b.set_ylabel("\u0394Y")
     ax3b.set_xlim(-300, 300)
@@ -156,6 +159,7 @@ if uploaded_file:
     st.pyplot(fig3)
 else:
     st.info("Aguardando upload de arquivo com colunas: tempo, X, Y...")
+
 
 
 
